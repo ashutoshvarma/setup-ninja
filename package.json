@@ -25,7 +25,12 @@
   "author": "YourNameOrOrganization",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.2.0",
+    "@actions/io": "^1.0.2",
+    "@types/jszip": "^3.1.7",
+    "@types/request": "^2.48.4",
+    "jszip": "^3.2.2",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
