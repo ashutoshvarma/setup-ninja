@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
+  "name": "setup-ninja",
+  "version": "0.0.1",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Github action to setup ninja build tool",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,26 +15,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/ashutoshvarma/setup-ninja.git"
   },
   "keywords": [
     "actions",
     "node",
-    "setup"
+    "setup",
+    "ninja"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "Ashutosh Varma",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/io": "^1.0.2",
-    "@types/jszip": "^3.1.7",
-    "@types/request": "^2.48.4",
     "jszip": "^3.2.2",
     "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
+    "@types/jszip": "^3.1.7",
     "@types/node": "^12.7.12",
+    "@types/request": "^2.48.4",
+    "@types/yaml": "^1.2.0",
     "@typescript-eslint/parser": "^2.8.0",
     "@zeit/ncc": "^0.20.5",
     "eslint": "^5.16.0",
@@ -45,6 +47,7 @@
     "js-yaml": "^3.13.1",
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "yaml": "^1.8.3"
   }
 }
