@@ -1,24 +1,26 @@
-import {wait} from '../src/wait'
 import * as process from 'process'
 import * as cp from 'child_process'
 import * as path from 'path'
+import YAML from 'yaml'
+import fs from 'fs'
 
-test('throws invalid number', async () => {
-  const input = parseInt('foo', 10)
-  await expect(wait(input)).rejects.toThrow('milliseconds not a number')
-})
+const actionFile: string = path.join(__dirname, '../action.yml')
 
-test('wait 500 ms', async () => {
-  const start = new Date()
-  await wait(500)
-  const end = new Date()
-  var delta = Math.abs(end.getTime() - start.getTime())
-  expect(delta).toBeGreaterThan(450)
-})
+function setupInputs(): void {
+  const parseObj = YAML.parse(fs.readFileSync(actionFile, 'utf-8'))
+  const inputs = parseObj.inputs
+  for (const key of Object.keys(inputs)) {
+    if (inputs[key].default) {
+      const inputEnv = `INPUT_${key.replace(/ /g, '_').toUpperCase()}`
+      process.env[inputEnv] = inputs[key].default
+      console.log(`${inputEnv}=${inputs[key].default}`)
+    }
+  }
+}
 
 // shows how the runner will run a javascript action with env / stdout protocol
 test('test runs', () => {
-  process.env['INPUT_MILLISECONDS'] = '500'
+  setupInputs()
   const ip = path.join(__dirname, '..', 'lib', 'main.js')
   const options: cp.ExecSyncOptions = {
     env: process.env
