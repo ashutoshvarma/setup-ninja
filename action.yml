@@ -9,7 +9,7 @@ inputs:
   dest:
     description: 'Folder where ninja binary will be downloaded'
     default: 'ninja_bin'
-    required: true
+    required: false
   platform: 
     description: Override default platform detection logic. Accepted values are [mac, linux, win]
     required: false
