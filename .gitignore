@@ -100,3 +100,6 @@ lib/**/*
 
 # Ignore vscode files
 .vscode
+
+ninja_bin
+ninja_binary
