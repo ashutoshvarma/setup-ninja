@@ -9,7 +9,7 @@ import path from 'path'
 async function run(): Promise<void> {
   try {
     const ninjaVersion: string = core.getInput('version', {required: false})
-    const ninjaDest: string = core.getInput('dest') || 'ninja_binary'
+    const ninjaDest: string = core.getInput('dest')
     const ninjaPlatform: string = util.getPlatform(core.getInput('platform'))
     if (!ninjaPlatform) throw Error('Unsupported Platform')
 
