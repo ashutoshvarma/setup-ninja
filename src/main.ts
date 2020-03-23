@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as core from '@actions/core'
 import * as io from '@actions/io'
 import * as util from './util'
@@ -42,6 +43,7 @@ async function run(): Promise<void> {
     // add to path
     core.addPath(ninjaDest)
 
+    console.log(`Successfully added ninja-${ninjaVersion} to PATH`)
   } catch (error) {
     core.setFailed(error.message)
   }
