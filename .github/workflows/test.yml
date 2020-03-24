@@ -9,6 +9,7 @@ on: # rebuild any PRs and main branch changes
 jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
+    if: "! contains(github.event.head_commit.message, '[skip ci]')"
     steps:
     - uses: actions/checkout@v1
     - run: |
