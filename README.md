@@ -20,6 +20,7 @@ Official ninja-build binaries are downloaded from [ninja-build](https://github.c
           build-dir: ${{ runner.workspace }}/build
           cc: gcc
           cxx: g++
+          configure-options: -G Ninja
           build-type: Release
         
 ```
