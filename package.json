@@ -27,7 +27,7 @@
   "author": "Ashutosh Varma",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.0",
+    "@actions/core": "^1.2.6",
     "@actions/io": "^1.0.2",
     "jszip": "^3.2.2",
     "request": "^2.88.2"
