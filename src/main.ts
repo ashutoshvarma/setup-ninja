@@ -43,7 +43,7 @@ async function run(): Promise<void> {
     }
 
     // create folders
-    io.mkdirP(ninjaDest)
+    await io.mkdirP(ninjaDest)
 
     const ninjaFilepath = path.join(ninjaDest, ninjaBinaryName)
 
