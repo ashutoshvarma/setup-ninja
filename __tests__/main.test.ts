@@ -28,3 +28,13 @@ test('test runs', () => {
   }
   console.log(cp.execSync(`node ${ip}`, options).toString())
 })
+
+// test the final built files
+test('integration tests', () => {
+  setupInputs()
+  const ip = path.join(__dirname, '..', 'dist', 'index.js')
+  const options: cp.ExecSyncOptions = {
+    env: process.env
+  }
+  console.log(cp.execSync(`node ${ip}`, options).toString())
+})
