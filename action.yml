@@ -4,7 +4,7 @@ author: 'Ashutosh Varma'
 inputs:
   version:              
     description: 'Ninja version. Make sure given ninja version exists in ninja github release'
-    default: '1.10.0'
+    default: '1.11.1'
     required: true
   dest:
     description: 'Folder where ninja binary will be downloaded'
@@ -14,7 +14,7 @@ inputs:
     description: Override default platform detection logic. Accepted values are [mac, linux, win]
     required: false
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 
 branding:
