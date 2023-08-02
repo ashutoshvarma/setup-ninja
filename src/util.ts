@@ -34,9 +34,9 @@ export async function downloadAsBuffer(url: string): Promise<Buffer> {
       if (err) {
         reject(err)
       }
-      console.log(`Recieved ${res.statusCode}`)
+      console.log(`Received ${res.statusCode}`)
       if (res.statusCode >= 400) {
-        reject(Error(`Recieved ${res.statusCode} from ${url}`))
+        reject(Error(`Received ${res.statusCode} from ${url}`))
       } else {
         console.log(`Download Complete.`)
         resolve(body)
